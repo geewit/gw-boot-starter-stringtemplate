@@ -26,10 +26,10 @@ public class StringTemplateUtils {
     }
 
 	/**
-     * render from Map<String, Object> to String
+     * render from Map to String
      * @param template 模板string
-     * @param params
-     * @return
+     * @param params   模板参数
+     * @return 渲染结果
      */
     public static String render(String template, Map<String, Object> params) {
         return render(template, '$', params);
