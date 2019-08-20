@@ -2,8 +2,7 @@ package io.geewit.boot.stringtemplate.service;
 
 import io.geewit.boot.stringtemplate.StringTemplateProperties;
 import io.geewit.boot.stringtemplate.utils.StringTemplateUtils;
-import io.geewit.core.utils.BeanUtils;
-import com.google.common.collect.Maps;
+import io.geewit.core.utils.lang.reflection.BeanUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +11,7 @@ import org.springframework.core.io.ResourceLoader;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -45,7 +45,7 @@ public class StringTemplateService {
         if(template == null) {
             return null;
         }
-        Map<String, Object> params = Maps.newHashMap();
+        Map<String, Object> params = new HashMap<>();
         BeanUtils.copyProperties(paramObject, params);
         String rendered = StringTemplateUtils.render(template, params);
         logger.debug("rendered : " + rendered);
