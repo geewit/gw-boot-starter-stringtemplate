@@ -2,7 +2,7 @@ package io.geewit.boot.stringtemplate.service;
 
 import io.geewit.boot.stringtemplate.StringTemplateProperties;
 import io.geewit.boot.stringtemplate.utils.StringTemplateUtils;
-import io.geewit.core.utils.lang.reflection.BeanUtils;
+import io.geewit.core.utils.reflection.BeanUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
