@@ -17,9 +17,7 @@ public class StringTemplateUtils {
     public static String render(String template, char delimiterToken, Map<String, Object> params) {
         logger.debug("template : " + template);
         ST st = new ST(template, delimiterToken, delimiterToken);
-        for (Map.Entry<String, Object> entry : params.entrySet()) {
-            st.add(entry.getKey(), entry.getValue());
-        }
+        params.forEach(st::add);
         String render = st.render();
         logger.debug("render : " + render);
         return render;
